@@ -1,0 +1,11 @@
+# Virtual environment
+venv/
+MLSimulator_Level2/
+bin/
+lib/
+include/
+.idea/
+*.iml
+.DS_Store
+__pycache__/
+*.pyc
