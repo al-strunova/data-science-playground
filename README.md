@@ -2,8 +2,6 @@
 
 Welcome to my `Data Science Playground` – a collection of my explorations and projects in machine learning and data science. This repository, along with others in my account, represents my journey in mastering ML concepts and techniques. It's a showcase of my learning progress, aimed at both sharing my experiences and demonstrating my growing skills to potential employers.
 
-Feel free to explore and discover insights into the practical applications of data science and machine learning that I've tackled so far.
-
 ## Repository Structure
 
 `data-science-playground` is organized into several key directories:
