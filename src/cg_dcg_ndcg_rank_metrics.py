@@ -78,12 +78,12 @@ def normalized_dcg(relevance: List[float], k: int, method: str = "standard") -> 
     return score
 
 
-def avg_ndcg(list_relevances: List[List[float]], k: int, method: str = 'standard') -> float:
+def avg_ndcg(list_relevance: List[List[float]], k: int, method: str = 'standard') -> float:
     """average nDCG
 
     Parameters
     ----------
-    list_relevances : `List[List[float]]`
+    list_relevance : `List[List[float]]`
         Video relevance matrix for various queries
     k : `int`
         Count relevance to compute
@@ -98,5 +98,15 @@ def avg_ndcg(list_relevances: List[List[float]], k: int, method: str = 'standard
     score : `float`
         Metric score
     """
-    score = sum([normalized_dcg(query, k, method) for query in list_relevances]) / len(list_relevances)
+    score = sum([normalized_dcg(query, k, method) for query in list_relevance]) / len(list_relevance)
     return score
+
+
+queries_relevance = [
+        [0.99, 0.94, 0.88, 0.89, 0.72, 0.65],
+        [0.99, 0.92, 0.93, 0.74, 0.61, 0.68],
+        [0.99, 0.96, 0.81, 0.73, 0.76, 0.69]
+    ]
+k_top = 5
+dcg_method = 'standard'
+print(avg_ndcg(queries_relevance, k_top, dcg_method))
