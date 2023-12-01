@@ -5,7 +5,6 @@ This file contains an implementation of a Gradient Boosting Regressor from scrat
 The regressor uses decision trees as the base learners. It supports subsampling and can be configured for different
 loss functions, learning rates, and tree parameters.
 
-Author: Aliaksandra Strunova
 """
 
 from typing import Tuple

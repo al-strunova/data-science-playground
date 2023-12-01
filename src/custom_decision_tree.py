@@ -1,32 +1,19 @@
 """
-Custom Decision Tree Regressor Implementation
+This module implements a simple Decision Tree Regressor. It can build a decision tree
+from a training dataset, predict values, and convert the tree to a JSON format.
 
-This module implements a decision tree regressor from scratch using the
-depth-wise construction approach. It is designed to be a versatile tool for
-solving various regression problems.
+Key Components:
+- DecisionTreeRegressor: Main class to build and use a decision tree for regression.
+- Node: Represents a node in the decision tree.
+- CustomEncoder: Custom JSON encoder for serializing Node instances.
 
-Key Features:
-1. Manual Tree Construction: Enables an in-depth understanding of the decision
-   tree mechanics and algorithm.
-2. Adjustable Parameters: 'max_depth' and 'min_samples_split' parameters allow
-   customization of the tree's depth and complexity.
-3. Regression Capability: Suited for a range of regression tasks, demonstrating
-   its utility in diverse applications.
-4. JSON Tree Representation: Functionality for outputting the tree structure in
-   JSON format, useful for analysis and visualization.
+The DecisionTreeRegressor class includes methods to fit the model to the training data,
+predict values, and serialize the tree to JSON. It utilizes mean squared error for determining
+the best split at each node.
 
-Components:
-- 'DecisionTreeRegressor' class: For fitting the tree to data and making predictions.
-- 'Node' class: Represents nodes within the tree.
-- 'CustomEncoder' class: Facilitates JSON serialization of the tree structure.
-
-Usage:
-The DecisionTreeRegressor can be utilized in various regression scenarios, offering
-flexibility and insight into decision tree operations.
-
-Author: Aliaksandra Strunova
+Example:
+- Train a decision tree regressor on a dataset, predict values, and convert the tree to JSON.
 """
-
 
 from __future__ import annotations
 from dataclasses import dataclass
@@ -253,6 +240,7 @@ class CustomEncoder(json.JSONEncoder):
 
     Overrides the default method to enable serialization of custom dataclass objects.
     """
+
     def default(self, obj):
         if isinstance(obj, Node):
             return obj.__dict__  # Convert Node instance to a dictionary

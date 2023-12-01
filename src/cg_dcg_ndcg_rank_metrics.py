@@ -1,3 +1,20 @@
+"""
+This module evaluates information retrieval models using cumulative gain metrics.
+It includes functions for calculating Cumulative Gain (CG), Discounted Cumulative Gain (DCG),
+and Normalized Discounted Cumulative Gain (nDCG). These functions help in assessing the
+effectiveness of search algorithms and recommendation systems, considering top-k elements
+in relevance scores.
+
+Includes:
+- cumulative_gain: Calculates CG@k.
+- discounted_cumulative_gain: Computes DCG@k.
+- normalized_dcg: Determines nDCG@k.
+- avg_ndcg: Calculates average nDCG for multiple queries.
+
+Example:
+Calculate average nDCG for given relevance scores of queries, top 5 results, using 'standard' method.
+"""
+
 from typing import List
 
 import numpy as np
