@@ -1,29 +1,21 @@
 """
-Greenterest Image Platform
+This module contains functions for evaluating classification models at a specified cutoff (k).
+These functions include recall_at_k, precision_at_k, specificity_at_k, and f1_at_k, which
+calculate the respective metrics for the top k predictions based on their scores.
 
-Overview:
-Greenterest stores neural network-generated images, offering a search service
-that returns 20+ relevant images per query. The model measures image relevance.
+Functions:
+- recall_at_k: Calculates the recall at the top k predictions.
+- precision_at_k: Computes the precision for the top k predictions.
+- specificity_at_k: Determines the specificity for the top k predictions.
+- f1_at_k: Calculates the F1 score, which is the harmonic mean of precision and recall, for the top k predictions.
 
-Objective:
-Evaluate model performance using historical user interactions and compare
-new algorithm's image re-ranking against the old system.
+These metrics are particularly useful for evaluating ranking models in information retrieval or recommendation systems.
 
-Metrics:
-1. Recall @ K: Proportion of clicked images identified as positive.
-2. Precision @ K: Accuracy of positive predictions (clicked images).
-3. F1-Score @ K: Harmonic mean of Precision and Recall.
-4. Specificity @ K: Correct identification of true negatives.
-
-Task:
-Implement these four metrics. Focus on top-ranking images, as users typically
-view only the first 10-20 results.
-
-Note:
-The model aims to ensure that the most relevant images appear in the top results.
-
-Author: Aliaksandra Strunova
+Example:
+- To evaluate a classification model, provide a list of true labels and predicted scores,
+  and specify the value of k (default 5) for calculating these metrics.
 """
+
 
 from typing import List
 
